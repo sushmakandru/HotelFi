@@ -1,0 +1,34 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <h1><%= user.firstName.toUpperCase() +" " + user.lastName.toUpperCase() %></h1>
+            <% if(currentUser && currentUser._id.equals(user.id)){ %>
+            <a href="/users/<%= currentUser._id %>/edit">Edit Profile</a>
+            <% } %>
+            <div class="thumbnail">
+                <img src="<%= user.avatar %>" alt="users profile pic">
+                <div class="caption">
+                    Mail to: <a href="mailto:<%= user.email %>"><%= user.email %></a>
+                </div>
+            </div>
+            <h4>About <%= user.firstName %></h4>
+            <p><%= user.info %></p>
+            
+        </div>
+        <div class="col-md-2">
+            
+        </div>
+        <div class="col-md-6">
+            <h2><%= user.firstName.toUpperCase() %>'s hotels</h2>
+            <ul>
+                <% hotels.forEach(function(hotel){ %>
+                    <li><h4><a href="/hotels/<%= hotel.id %>"><%= hotel.name %></a><h4></li>
+                    
+                <% }); %>
+            </ul>
+        </div>
+    </div>
+</div>
+<% include ../partials/footer %>

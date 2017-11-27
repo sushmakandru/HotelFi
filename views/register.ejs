@@ -1,0 +1,54 @@
+<% include ./partials/header %>
+
+<div class="container">
+    <div class="alert alert-info" role="alert">
+        <p> If you are an admin please register with the secret code, else leave secret code field empty and register.</p>
+    </div>
+    <div class="row">
+        <h1 style="text-align:center;"> Sign Up!</h1>
+        <div style="width:30%; margin: 25px auto;">
+            <form action="/register" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="username">UserName</label>
+                    <input type="text" class="form-control" name="username" placeholder="username">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" name="password" placeholder="password">
+                </div>
+                <div class="form-group">
+                    <label for="firstname">FirstName</label>
+                    <input type="text" class="form-control" name="firstname" placeholder="first name">
+                </div>
+                <div class="form-group">
+                    <label for="lastname">LastName</label>
+                    <input type="text" class="form-control" name="lastname" placeholder="last name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" name="email" placeholder="email">
+                </div>
+                <div class="form-group">
+                    <label for="image">Image</label>
+                    <input type="file" id="image" name="image" accept="image/*" required>
+                </div>
+                <div class="form-group">
+                    <label for="info">Description about you</label>
+                    <textarea class="form-control" name="info" placeholder="few lines about yourself"></textarea>
+                    <!-- <input type="text" class="form-control" name="info" placeholder="few lines about you"> -->
+                </div>
+                <div class="form-group">
+                    <label for="admincode">Admin Code(If you are admin, register with the code provided. Else, leave it blank and register)</label>
+                    <input type="password" class="form-control" name="admincode" placeholder="admin code">
+                </div>
+                
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block">Sign Up</button>
+                </div>
+            </form>
+            <a href="/hotels">Go Back</a>
+        </div>
+    </div>
+</div>
+
+<% include ./partials/footer %>
